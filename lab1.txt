@@ -1,0 +1,120 @@
+import java.util.*
+import kotlin.random.Random
+
+//feladat 3
+ fun primeCheck(num: Int){   
+    var flag = false
+    for (i in 2..num / 2) {
+        if (num % i == 0) {
+            flag = true
+            break
+        }
+    }
+
+    if (!flag)
+        println("$num is a prime number.")
+    }
+
+//feladat 4
+ fun encode(str:String){
+    val encoder: Base64.Encoder = Base64.getEncoder()
+    val encoded: String = encoder.encodeToString(str.toByteArray())
+    println("Encoded Data: $encoded")
+}
+
+ fun decode(str:String){
+    val decoder: Base64.Decoder = Base64.getDecoder()
+    val decoded = String(decoder.decode(str))
+    println("Decoded Data: $decoded")
+}
+
+//feladat 5
+	fun evenNumbers(array: List<Int>):List<Int> = array.filter{it % 2 == 0}
+    
+//feladat 6
+	fun doubleElements(array: List<Int>):List<Int> = array.map{it -> it *2};
+	fun capitalize(array: List<String>):List<String> = array.map{it -> it.uppercase()};
+	fun capitalizeFirstLetter(array: List<String>):List<String> = array.map{it -> it.capitalize()};
+	fun strLength(array: List<String>):List<Int> = array.map{it -> it.length};
+	fun avarage(array: List<String>):Double = array.map{it -> it.length}.average();
+
+fun average2(array: List<Int>):Double = array.average();
+
+
+fun main() {
+//1.feladat
+    val a = 2
+    val b = 3
+    val sum = a + b
+    println("$a + $b = $sum")
+
+//feladat 2
+    val daysOfWeek = listOf("Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday","Sunday")
+        
+    for (day in daysOfWeek) {
+        println(day)
+	}
+        println("Days starting with letter 'T': ")
+		daysOfWeek.filter{it.startsWith("T")}.forEach{println(it)}
+    	println()
+        
+    	println("Days containing the letter 'e' : ")
+    	//daysOfWeek.filter{x->!x.cointains('e')}.forEach{println(it)}
+  		val list = daysOfWeek.filter{x-> x.contains('e')}
+        println(list)
+
+        println("All days of length 6: ")
+   		daysOfWeek.filter{it.length == 6}.forEach{println(it)}    
+        
+ //feladat 3
+        for(i in 1..100){
+        	primeCheck(i)
+        }
+        
+//feladat 4
+        encode("KodolandoSzoveg")
+
+//feladat 5
+        val numbers = listOf(1, 2, 5, 6, 7, 9, 12, 10)
+        println(evenNumbers(numbers))
+    
+//feladat 6
+	
+   println(doubleElements(numbers))
+   println(capitalize(daysOfWeek))
+   println(capitalizeFirstLetter(daysOfWeek))	
+   println(strLength(daysOfWeek))
+   println("average: " + avarage(daysOfWeek))
+   
+//feladat 7
+	var daysOfWeekMutable = daysOfWeek.toMutableList();
+    var  daysOfWeekMutable_n = daysOfWeekMutable.filter{!it.contains("n")}
+    println("days without n: " + daysOfWeekMutable_n)
+	
+    for ((index, value) in daysOfWeekMutable_n.withIndex()) {
+    	println("Item at $index is $value")
+	}
+    
+    println(daysOfWeekMutable_n.sorted())
+    
+//feladat 8
+	
+    val myRandomValues = List(10) { Random.nextInt(0, 100) }
+    //println(myRandomValues)
+    myRandomValues.forEach{
+        n -> print(n)
+        print(", ")
+    }
+    println()
+    
+    println("sorted in ascending order: " + myRandomValues.sorted())
+    
+    println("even numbers: " + evenNumbers(myRandomValues))
+    var evenNums = evenNumbers(myRandomValues);
+    if(myRandomValues.size == evenNums.size){
+        println("All the numbers are even!")
+    }else{
+         println("Not all the numbers are even!")
+    }    
+   
+}
