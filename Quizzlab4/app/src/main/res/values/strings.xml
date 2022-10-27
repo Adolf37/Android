@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Quizz (lab4)</string>
+    <string name="szia">Szia!</string>
+    <string name="quizz">Quizz</string>
+    <string name="get_started">Get Started</string>
+    <string name="quiz">Quiz</string>
+    <string name="the_name_of_the_player_is">The name of the player is:</string>
+    <string name="vrencian_lilla">Vrencian Lilla</string>
+    <string name="choose_contact">Choose Contact</string>
+    <string name="getstartedButton">GET STARTED</string>
+</resources>
