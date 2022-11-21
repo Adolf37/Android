@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+        <!--<TextView
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="12sp"
+            android:text="Quiz App"
+            android:textColor="@color/white"
+            android:textSize="12pt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>-->
+        <!--<RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz"
+                android:layout_centerHorizontal="true"
+                android:textSize="16pt"
+                android:id="@+id/title_QA_main"/>
+
+            <EditText
+                android:layout_width="60pt"
+                android:layout_height="20pt"
+                android:layout_below="@id/title_QA_main"
+                android:layout_marginTop="20pt"
+                android:id="@+id/et_main"
+                android:hint="Your Name"/>
+
+            <Button
+                android:id="@+id/btnContact"
+                android:layout_width="60pt"
+                android:layout_height="18pt"
+                android:layout_below="@+id/et_main"
+                android:layout_marginTop="20pt"
+                android:text="Contact"
+                android:textSize="6pt"
+                android:backgroundTint="@color/orange_f9100"/>
+
+            <Button
+                android:id="@+id/btnGs"
+                android:layout_width="60pt"
+                android:layout_height="18pt"
+                android:layout_below="@+id/btnContact"
+                android:layout_marginTop="5pt"
+                android:text="Get Started"
+                android:textSize="6pt"
+                android:backgroundTint="@color/orange_f9100"/>
+
+        </RelativeLayout>-->
+        <fragment
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/my_nav"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_menu"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/bottom_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/bottom_navigation_menu" />
+
+        </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
